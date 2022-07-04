@@ -17,6 +17,7 @@
     <%= link_to "Articles", articles_path %>
     <% if current_user.present? %>
       <span data-test="current-user-email""><%= current_user.email %></span<>
+      <%= link_to "Settings and Beta features", admin_settings_and_beta_features_path %>
       <%= button_to "Sign out", destroy_user_session_path, method: :delete, form_class: "d-inline" %>
     <% else %>
       <%= link_to "Login", new_user_session_path %>

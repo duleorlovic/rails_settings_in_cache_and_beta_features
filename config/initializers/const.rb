@@ -7,7 +7,7 @@ require "rails/commands/server/server_command" # we need this for rails c or rai
 # I tried with Rack::Server.new.options[:Port] but it always returns 9292
 
 module Const
-  def self.common # rubocop:todo Metrics/MethodLength
+  def self.common
     hash_or_error_if_key_does_not_exists(
       name: 'MyApp',
       # short_name is also use in config/sidekiq.yml and config/application.rb
@@ -26,6 +26,20 @@ module Const
         port: (Rails.env.development? ? Rails::Server::Options.new.parse!(ARGV)[:Port] : nil),
         protocol: Rails.env.production? ? 'https' : 'http',
       },
+    )
+  end
+
+  def self.beta_features
+    hash_or_error_if_key_does_not_exists(
+      landing_feature: "My landing feature",
+      delete_account_feature: "Allow user to delete account",
+    )
+  end
+
+  def self.default_settings
+    hash_or_error_if_key_does_not_exists(
+      embed_video_url_for_popup_on_home_page: "https://www.youtube.com/embed/cQr4ua3dxiM",
+      beta_users: "",
     )
   end
 

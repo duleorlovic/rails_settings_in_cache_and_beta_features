@@ -1,0 +1,24 @@
+<h1>Settings and Beta features</h1>
+<%= form_with model: @settings_and_beta_features_form, url: admin_update_settings_and_beta_features_path do |f| %>
+  <fieldset>
+    <legend>
+      Live features
+    </legend>
+    <% Const.beta_features.each do |feature, description| %>
+      <%= f.label "#{feature} (#{description})", for: feature %>
+      <%= f.check_box "live_features", { multiple: true, id: feature, checked: MySetting[:live_features].to_s.include?(feature.to_s) }, feature %>
+      <br>
+    <% end %>
+  </fieldset>
+  <fieldset>
+    <legend>
+      Settings
+    </legend>
+    <% Const.default_settings.each do |key, value| %>
+      <%= f.label key, for: key %>
+      <%= f.text_field "settings[#{key}]", value: MySetting[key], id: key %>
+      <br>
+    <% end %>
+  </fieldset>
+  <%= f.submit "Save" %>
+<% end %>

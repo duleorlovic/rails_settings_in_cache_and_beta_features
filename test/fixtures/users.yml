@@ -5,3 +5,4 @@ DEFAULTS: &DEFAULTS
 
 user:
   <<: *DEFAULTS
+  admin: true
