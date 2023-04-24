@@ -16,34 +16,33 @@ For Heroku, you need addon
 [MemCachier](https://devcenter.heroku.com/articles/memcachier) since FileStore
 is not shared between dynos (rails console is separate dyno).
 [rack-cache](https://devcenter.heroku.com/articles/rack-cache-memcached-rails31)
-is even better. It is not needed if you have activeAdmin page for updating
-settings.
-So here is my beta features code that is accessible for *admin* user.
-Lets create migration
-```
-rails g model MySetting name value:text description:text
-```
-and admin controller
-```
-rails g controller admin settings_and_beta_features
-```
+is even better.
 
-and use template
+To find what is needed, the best way is to look at template and apply it
 ```
+rails app:template LOCATION=https://raw.githubusercontent.com/duleorlovic/rails_settings_in_cache_and_beta_features/main/template.rb
 ```
 Main files are
 ```
 # app/models/my_setting.rb
-```
-and
-```
 # app/helpers/beta_helper.rb
+```
+
+Add routes
+```
+# config/routes.rb
+  get "admin/settings_and_beta_features"
+  post "admin/update_settings_and_beta_features"
+```
+and controller
+```
+# app/controllers/admin_controller.rb
 ```
 
 In all places in my rails application I use this `beta` helper method that uses
 two MySetting variable. `live_features` are comma separated list of feature
-names that are live, and `beta_users` are emails for users that can see non live
-features (of course only when they are logged in).
+names that are live, and `beta_user_emails` are emails for users that can see
+non live features (of course only when they are logged in).
 
 To keep track of features I usually write them in const.file
 

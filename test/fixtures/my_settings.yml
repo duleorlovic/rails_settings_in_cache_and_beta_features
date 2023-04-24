@@ -1,11 +1,8 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# use config/initializers/const.rb beta_features to list all features
+live_features:
+  name: live_features
+  value: landing_feature
 
-one:
-  name: MyString
-  value: MyText
-  description: MyText
-
-two:
-  name: MyString
-  value: MyText
-  description: MyText
+beta_user_emails:
+  name: beta_user_emails
+  value: user@email.com

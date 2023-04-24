@@ -10,7 +10,9 @@ get "https://raw.githubusercontent.com/duleorlovic/rails_settings_in_cache_and_b
 get "https://raw.githubusercontent.com/duleorlovic/rails_settings_in_cache_and_beta_features/main/app/models/my_setting.rb",
     "app/models/my_setting.rb"
 get "https://raw.githubusercontent.com/duleorlovic/rails_settings_in_cache_and_beta_features/main/app/helpers/beta_helper.rb",
-    "app/models/my_setting.rb"
+    "app/helpers/beta_helper.rb"
+get "https://raw.githubusercontent.com/duleorlovic/rails_settings_in_cache_and_beta_features/main/app/helpers/text_helper.rb",
+    "app/helpers/text_helper.rb"
 
 get "https://raw.githubusercontent.com/duleorlovic/rails_settings_in_cache_and_beta_features/main/app/views/admin/settings_and_beta_features.html.erb",
     "app/views/admin/settings_and_beta_features.html.erb"

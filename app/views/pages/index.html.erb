@@ -1,5 +1,8 @@
 <h1>Pages#index</h1>
 <p>Find me in app/views/pages/index.html.erb</p>
-<% if beta :landing_feature %>
+<% if beta? :landing_feature %>
   <h1>This is landing feature</h1>
+<% end %>
+<% if beta? :delete_account_feature %>
+  <p>You can delete account</p>
 <% end %>

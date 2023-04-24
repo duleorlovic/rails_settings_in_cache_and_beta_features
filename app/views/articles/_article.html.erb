@@ -1,4 +1,7 @@
 <div id="<%= dom_id article %>">
+  <% if beta? :delete_account_feature, current_user %>
+    <p>You can delete account</p>
+  <% end %>
   <p>
     <strong>Title:</strong>
     <%= article.title %>

@@ -16,7 +16,7 @@
     </legend>
     <% Const.default_settings.each do |key, value| %>
       <%= f.label key, for: key %>
-      <%= f.text_field "settings[#{key}]", value: MySetting[key], id: key %>
+      <%= f.text_area "settings[#{key}]", value: MySetting[key], id: key %>
       <br>
     <% end %>
   </fieldset>

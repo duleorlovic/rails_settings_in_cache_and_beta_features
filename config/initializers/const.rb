@@ -39,7 +39,7 @@ module Const
   def self.default_settings
     hash_or_error_if_key_does_not_exists(
       embed_video_url_for_popup_on_home_page: "https://www.youtube.com/embed/cQr4ua3dxiM",
-      beta_users: "",
+      beta_user_emails: "",
     )
   end
 
